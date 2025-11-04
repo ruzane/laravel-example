@@ -24,7 +24,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'LARAVEL_TOKEN', variable: """${SONAR_TOKEN}""")]) {
                     bat """
-                        sonar-scanner ^
+                        ${SONARQUBE_SCANNER}\\bin\\sonar-scanner.bat ^
                         -Dsonar.organization=${SONAR_ORG} ^
                         -Dsonar.projectKey=${SONAR_PROJECT} ^
                         -Dsonar.sources=. ^
