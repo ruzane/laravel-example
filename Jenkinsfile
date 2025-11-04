@@ -22,7 +22,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarCloud') {
+                withSonarQubeEnv('sonarqube') {
                     bat """
                         ${SONARQUBE_SCANNER}\\bin\\sonar-scanner.bat ^
                         -Dsonar.organization=${SONAR_ORG} ^
