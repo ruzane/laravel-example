@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         SONAR_TOKEN = credentials('LARAVEL_TOKEN')
-        SONARQUBE_SCANNER = 'SonarScanner '
+        SONARQUBE_SCANNER = 'sonarqube'
         SONAR_ORG = 'zimswitchdev'
         SONAR_PROJECT = 'zimswitchdev_laravel-project'
     }
@@ -22,7 +22,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarScanner ') {
+                withSonarQubeEnv('sonarqube') {
                     bat """
                         ${SONARQUBE_SCANNER}\\bin\\sonar-scanner.bat ^
                         -Dsonar.organization=${SONAR_ORG} ^
