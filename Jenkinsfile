@@ -29,7 +29,7 @@ pipeline {
                         -Dsonar.projectKey=${SONAR_PROJECT} ^
                         -Dsonar.sources=. ^
                         -Dsonar.host.url=https://sonarcloud.io ^
-                        -Dsonar.login=${SONAR_TOKEN}
+                        -Dsonar.token=${SONAR_TOKEN}
                     """
                 }
             }
