@@ -24,6 +24,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     bat """
+                        sonar-scanner ^
                         -Dsonar.organization=${SONAR_ORG} ^
                         -Dsonar.projectKey=${SONAR_PROJECT} ^
                         -Dsonar.sources=. ^
