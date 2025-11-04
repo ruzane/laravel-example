@@ -22,7 +22,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withCredentials([string(credentialsId: 'LARAVEL_TOKEN', variable: """${SONAR_TOKEN}""")]) {
+                withSonarQubeEnv('SonarCloud') {
                     bat """
                         ${SONARQUBE_SCANNER}\\bin\\sonar-scanner.bat ^
                         -Dsonar.organization=${SONAR_ORG} ^
