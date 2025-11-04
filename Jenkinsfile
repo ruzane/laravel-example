@@ -6,7 +6,7 @@ pipeline {
             steps {
                 git 'https://github.com/Kennibravo/jenkins-laravel.git'
                 bat 'composer install --ignore-platform-reqs'
-                bat 'cp .env.example .env'
+                bat 'copy .env.example .env'
                 bat 'php artisan key:generate'
             }
         }
